@@ -50,18 +50,12 @@ void insertionSort(vector<int>&arr){
     }
 }
 
-void quickSort(vector<int>&arr){
-    
-}
-
-
-
 int main(){
     vector<int>arr = {2,13,12,3,122,4,2,21,3,4,0,21,2,4,2,3};
+    sort(arr.begin(),arr.end());
     // bubbleSort(arr);,
     // selectionSort(arr);
-    // insertionSort(arr);
-    quickSort(arr);    
+    // insertionSort(arr);    
     
     for(int i : arr)cout<<i<<" ";
     return 0;
