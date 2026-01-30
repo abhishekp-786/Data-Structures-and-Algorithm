@@ -1,8 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
-// not completed
 int findSmlst(vector<int>&arr){
     int n = arr.size();
     int low = 0, high = n-1;
