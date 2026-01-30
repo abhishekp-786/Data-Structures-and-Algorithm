@@ -6,22 +6,20 @@ using namespace std;
 int findSmlst(vector<int>&arr){
     int n = arr.size();
     int low = 0, high = n-1;
-    int ans = INT_MAX;
-    while(low<=high){
+    while(low < high){
         int mid = low+(high-low)/2;
-        if(arr[mid]<arr[high]){
-            ans = arr[mid];
-            high = mid-1;
-        }
-        else{
+        if(arr[mid]>arr[high]){
             low = mid+1;
         }
+        else{
+            high = mid;
+        }
     }
-    return ans;
+    return arr[low];
 }
 
 int main(){
-    vector<int>arr = {5,6,7,81,1,2,3,4};
+    vector<int>arr = {10,12,1,4,5,6,8};
     int smallest = findSmlst(arr);
     cout<<smallest<<endl;
 
