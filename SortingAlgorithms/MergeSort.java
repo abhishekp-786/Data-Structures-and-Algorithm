@@ -1,6 +1,6 @@
 package SortingAlgorithms;
 public class MergeSort {
-
+    /* 
     public static void mergeTheArray(int[]arr, int low, int mid, int high){
         int n1 = mid-low + 1;
         int n2 = high-mid;
@@ -44,6 +44,37 @@ public class MergeSort {
             mergeSort(arr, mid+1, high);
 
             mergeTheArray(arr, low, mid, high);
+        }
+    }
+*/
+    static void merge(int[]arr, int low, int mid, int high){
+        int tsize = high-low+1; // temp array size
+        int[]temp = new int[tsize];
+        int i = low, j = mid+1, k = 0;
+
+        while(i<=mid && j<=high){
+            if(arr[i]<arr[j]){
+                temp[k++] = arr[i++];
+            }
+            else temp[k++] = arr[j++];
+        }
+        while(i<=mid){
+            temp[k++] = arr[i++];
+        }
+        while(j<=high){
+            temp[k++] = arr[j++];
+        }
+        for(int p=0; p<temp.length; p++){
+            arr[low+p] = temp[p];
+        }
+
+    }
+    static void mergeSort(int[]arr, int low, int high){
+        if(low<high){
+            int mid = low+(high-low)/2;
+            mergeSort(arr,low,mid);
+            mergeSort(arr,mid+1,high);
+            merge(arr,low,mid,high);
         }
     }
     public static void main(String[] args){
