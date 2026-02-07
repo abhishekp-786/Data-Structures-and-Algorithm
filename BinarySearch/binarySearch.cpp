@@ -16,7 +16,6 @@ int findEle(vector<int>&arr, int target){
 
 void findIdx(vector<int>&arr, int target){
     int n = arr.size();
-// not completed
     int low = 0, high = n-1;
     int ans2 = 0, ans1 = n;
     while(low<=high){

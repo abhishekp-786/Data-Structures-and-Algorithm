@@ -47,6 +47,7 @@ public class MergeSort {
         }
     }
 */
+// Another way (but same apprach)
     static void merge(int[]arr, int low, int mid, int high){
         int tsize = high-low+1; // temp array size
         int[]temp = new int[tsize];
